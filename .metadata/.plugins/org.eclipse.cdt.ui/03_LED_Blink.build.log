@@ -1,0 +1,6 @@
+00:24:06 **** Incremental Build of configuration Debug for project 03_LED_Blink ****
+make all 
+make: Nothing to be done for 'all'.
+
+00:24:06 Build Finished (took 112ms)
+

@@ -1,0 +1,24 @@
+//============================================================================
+// Name        : 03_LED_Blink.cpp
+// Author      : 
+// Version     :
+// Copyright   : Your copyright notice
+// Description : Hello World in C++, Ansi-style
+//============================================================================
+
+#include <iostream>
+#include <mraa.hpp>
+using namespace std;
+
+// Declare the pin number
+#define LED_PIN =  26;
+
+// Create a GPIO object
+mraa::Gpio* ledGpio;
+
+int main() {
+	ledGpio = new mraa::Gpio(LED_PIN);
+	mraa::init();
+	cout << "!!!Hello World!!!" << endl; // prints !!!Hello World!!!
+	return 0;
+}

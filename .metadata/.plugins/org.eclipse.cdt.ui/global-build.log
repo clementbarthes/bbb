@@ -1,0 +1,10 @@
+00:38:25 **** Incremental Build of configuration Debug for project 04_Interrupt ****
+make all 
+Building target: 04_Interrupt
+Invoking: Cross G++ Linker
+arm-linux-gnueabihf-g++  -o "04_Interrupt"  ./src/04_Interrupt.o   -lmraa
+Finished building target: 04_Interrupt
+ 
+00:38:58 **** Incremental Build of configuration Debug for project 04_Interrupt ****
+make all 
+make: Nothing to be done for 'all'.
