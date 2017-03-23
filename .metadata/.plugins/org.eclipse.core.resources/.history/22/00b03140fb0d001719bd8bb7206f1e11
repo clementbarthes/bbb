@@ -1,0 +1,100 @@
+/*
+ * Gpio.cpp
+ *
+ *  Created on: Mar 20, 2017
+ *      Author: bbb
+ */
+
+#include "Gpio.h"
+#define BUFFER_SIZE 255
+
+Gpio::Gpio(int pinNumber) {
+	char bu[BUFFER_SIZE];
+	snprintf(bu, MAX_SIZE,  "/sys/class/gpio%d/value", pinNumber);
+	dev->value_fp = open(bu, O_RDWR);
+	if (dev->value_fp == -1) {
+		syslog(LOG_ERR, "gpio%i: Failed to open 'value': %s", dev->pin, strerror(errno));
+		return MRAA_ERROR_INVALID_RESOURCE;
+	}
+
+	this->pinNumber = pinNumber;
+	ostringstream gpioPathSS;
+	ofstream exportFS;
+	char exportPath[] = "/sys/class/gpio/export";
+	exportFS.open(exportPath);
+	exportFS << this->pinNumber;
+	gpioPathSS << "/sys/class/gpio/gpio" << this->pinNumber;
+	gpioPath = gpioPathSS.str();
+	pinDirection = 0;  // Input by default
+}
+
+int Gpio::setDirection(int dir) {
+	ostringstream gpioDirectionSS;
+	ofstream directionFS;
+	gpioDirectionSS << gpioPath << "/direction";
+	directionFS.open(gpioDirectionSS.str().c_str());
+	if (dir == 0){
+		directionFS << "in";
+		directionFS.close();
+		pinDirection = 0;
+		return 0;
+	}
+	else if (dir == 1){
+		directionFS << "out";
+		directionFS.close();
+		pinDirection = 1;
+		return 0;
+	} else {
+		// Return error
+		cerr << "Invalid pin direction" << endl;
+		directionFS.close();
+		return -1;
+	}
+}
+
+int Gpio::getDirection() {
+	ostringstream gpioDirectionSS;
+	ifstream directionFS;
+	gpioDirectionSS << gpioPath << "/direction";
+	directionFS.open(gpioDirectionSS.str().c_str());
+
+	string direction;
+	directionFS >> direction;
+	directionFS.close();
+	if (direction == "in")
+		return 0;
+	else if (direction == "out")
+		return 1;
+	else
+		return -1;
+}
+
+int Gpio::read() {
+	if (pinDirection != 0)
+		return -1;
+	ostringstream gpioValueSS;
+	ifstream valueFS;
+	gpioValueSS << gpioPath << "/value";
+	valueFS.open(gpioValueSS.str().c_str());
+	int value;
+	valueFS >> value;
+	valueFS.close();
+	return value;
+}
+
+int Gpio::write(int value) {
+	if (pinDirection != 1)
+		return -1;
+	ostringstream gpioValueSS;
+	ofstream valueFS;
+	gpioValueSS << gpioPath << "/value";
+	valueFS.open(gpioValueSS.str().c_str());
+	valueFS << value;
+	valueFS.close();
+	return 0;
+}
+
+Gpio::~Gpio() {
+	// TODO Auto-generated destructor stub
+}
+

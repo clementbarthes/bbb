@@ -1,10 +1,168 @@
-00:38:25 **** Incremental Build of configuration Debug for project 04_Interrupt ****
+21:53:24 **** Incremental Build of configuration Debug for project 06_TimerInterval ****
 make all 
-Building target: 04_Interrupt
-Invoking: Cross G++ Linker
-arm-linux-gnueabihf-g++  -o "04_Interrupt"  ./src/04_Interrupt.o   -lmraa
-Finished building target: 04_Interrupt
+Building file: ../src/06_TimerInterval.cpp
+Invoking: Cross G++ Compiler
+arm-linux-gnueabihf-g++ -O0 -g3 -Wall -c -fmessage-length=0 -std=c++11 -MMD -MP -MF"src/06_TimerInterval.d" -MT"src/06_TimerInterval.o" -o "src/06_TimerInterval.o" "../src/06_TimerInterval.cpp"
+Finished building: ../src/06_TimerInterval.cpp
  
-00:38:58 **** Incremental Build of configuration Debug for project 04_Interrupt ****
+Building target: 06_TimerInterval
+Invoking: Cross G++ Linker
+arm-linux-gnueabihf-g++  -o "06_TimerInterval"  ./src/06_TimerInterval.o ./src/Adxl345I2C.o ./src/I2c.o   
+Finished building target: 06_TimerInterval
+ 
+21:53:29 **** Incremental Build of configuration Debug for project 06_TimerInterval ****
 make all 
 make: Nothing to be done for 'all'.
+21:55:14 **** Incremental Build of configuration Debug for project 06_TimerInterval ****
+make all 
+Building file: ../src/06_TimerInterval.cpp
+Invoking: Cross G++ Compiler
+arm-linux-gnueabihf-g++ -O0 -g3 -Wall -c -fmessage-length=0 -std=c++11 -MMD -MP -MF"src/06_TimerInterval.d" -MT"src/06_TimerInterval.o" -o "src/06_TimerInterval.o" "../src/06_TimerInterval.cpp"
+Finished building: ../src/06_TimerInterval.cpp
+ 
+Building target: 06_TimerInterval
+Invoking: Cross G++ Linker
+arm-linux-gnueabihf-g++  -o "06_TimerInterval"  ./src/06_TimerInterval.o ./src/Adxl345I2C.o ./src/I2c.o   
+Finished building target: 06_TimerInterval
+ 
+21:59:08 **** Incremental Build of configuration Debug for project 01_HelloWorld ****
+make all 
+make: Nothing to be done for 'all'.
+21:59:08 **** Incremental Build of configuration Debug for project 02_MRAA ****
+make all 
+make: Nothing to be done for 'all'.
+21:59:09 **** Incremental Build of configuration Debug for project 03_LED_Blink ****
+make all 
+make: Nothing to be done for 'all'.
+21:59:10 **** Incremental Build of configuration Debug for project 03b_LED_Blink ****
+make all 
+make: Nothing to be done for 'all'.
+21:59:10 **** Incremental Build of configuration Debug for project 04_Interrupt ****
+make all 
+make: Nothing to be done for 'all'.
+21:59:11 **** Incremental Build of configuration Debug for project 05_I2C ****
+make all 
+make: Nothing to be done for 'all'.
+21:59:12 **** Incremental Build of configuration Debug for project 06_TimerInterval ****
+make all 
+Building file: ../src/06_TimerInterval.cpp
+Invoking: Cross G++ Compiler
+arm-linux-gnueabihf-g++ -O0 -g3 -Wall -c -fmessage-length=0 -std=c++11 -MMD -MP -MF"src/06_TimerInterval.d" -MT"src/06_TimerInterval.o" -o "src/06_TimerInterval.o" "../src/06_TimerInterval.cpp"
+Finished building: ../src/06_TimerInterval.cpp
+ 
+Building target: 06_TimerInterval
+Invoking: Cross G++ Linker
+arm-linux-gnueabihf-g++  -o "06_TimerInterval"  ./src/06_TimerInterval.o ./src/Adxl345I2C.o ./src/I2c.o   
+Finished building target: 06_TimerInterval
+ 
+21:59:16 **** Incremental Build of configuration Debug for project 07_ChipInterrupt ****
+make all 
+make: Nothing to be done for 'all'.
+21:59:16 **** Incremental Build of configuration Debug for project 08_IPC_Socket ****
+make all 
+make: Nothing to be done for 'all'.
+21:59:23 **** Incremental Build of configuration Debug for project 06_TimerInterval ****
+make all 
+make: Nothing to be done for 'all'.
+22:24:33 **** Incremental Build of configuration Debug for project 06_TimerInterval ****
+make all 
+make: Nothing to be done for 'all'.
+22:26:12 **** Incremental Build of configuration Debug for project 06_TimerInterval ****
+make all 
+make: Nothing to be done for 'all'.
+22:26:53 **** Incremental Build of configuration Debug for project 06_TimerInterval ****
+make all 
+make: Nothing to be done for 'all'.
+22:34:22 **** Incremental Build of configuration Debug for project 06_TimerInterval ****
+make all 
+make: Nothing to be done for 'all'.
+22:41:32 **** Incremental Build of configuration Debug for project 06_TimerInterval ****
+make all 
+Building file: ../src/06_TimerInterval.cpp
+Invoking: Cross G++ Compiler
+arm-linux-gnueabihf-g++ -O0 -g3 -Wall -c -fmessage-length=0 -std=c++11 -MMD -MP -MF"src/06_TimerInterval.d" -MT"src/06_TimerInterval.o" -o "src/06_TimerInterval.o" "../src/06_TimerInterval.cpp"
+Finished building: ../src/06_TimerInterval.cpp
+ 
+Building target: 06_TimerInterval
+Invoking: Cross G++ Linker
+arm-linux-gnueabihf-g++  -o "06_TimerInterval"  ./src/06_TimerInterval.o ./src/Adxl345I2C.o ./src/I2c.o   
+Finished building target: 06_TimerInterval
+ 
+22:42:09 **** Incremental Build of configuration Debug for project 06_TimerInterval ****
+make all 
+make: Nothing to be done for 'all'.
+22:42:53 **** Incremental Build of configuration Debug for project 06_TimerInterval ****
+make all 
+make: Nothing to be done for 'all'.
+22:53:58 **** Incremental Build of configuration Debug for project 06_TimerInterval ****
+make all 
+make: Nothing to be done for 'all'.
+22:54:50 **** Incremental Build of configuration Debug for project 08_IPC_Socket ****
+make all 
+make: Nothing to be done for 'all'.
+23:10:03 **** Incremental Build of configuration Debug for project 08_IPC_Socket ****
+make all 
+make: Nothing to be done for 'all'.
+23:23:44 **** Incremental Build of configuration Debug for project 08_IPC_Socket ****
+make all 
+Building file: ../src/08_IPC_Socket.cpp
+Invoking: Cross G++ Compiler
+arm-linux-gnueabihf-g++ -O0 -g3 -Wall -c -fmessage-length=0 -std=c++11 -MMD -MP -MF"src/08_IPC_Socket.d" -MT"src/08_IPC_Socket.o" -o "src/08_IPC_Socket.o" "../src/08_IPC_Socket.cpp"
+Finished building: ../src/08_IPC_Socket.cpp
+ 
+Building target: 08_IPC_Socket
+Invoking: Cross G++ Linker
+arm-linux-gnueabihf-g++  -o "08_IPC_Socket"  ./src/08_IPC_Socket.o ./src/Adxl345I2C.o ./src/I2c.o ./src/SocketNode.o   
+Finished building target: 08_IPC_Socket
+ 
+23:41:39 **** Incremental Build of configuration Debug for project 08_IPC_Socket ****
+make all 
+Building file: ../src/08_IPC_Socket.cpp
+Invoking: Cross G++ Compiler
+arm-linux-gnueabihf-g++ -O0 -g3 -Wall -c -fmessage-length=0 -std=c++11 -MMD -MP -MF"src/08_IPC_Socket.d" -MT"src/08_IPC_Socket.o" -o "src/08_IPC_Socket.o" "../src/08_IPC_Socket.cpp"
+Finished building: ../src/08_IPC_Socket.cpp
+ 
+Building target: 08_IPC_Socket
+Invoking: Cross G++ Linker
+arm-linux-gnueabihf-g++  -o "08_IPC_Socket"  ./src/08_IPC_Socket.o ./src/Adxl345I2C.o ./src/I2c.o ./src/SocketNode.o   
+Finished building target: 08_IPC_Socket
+ 
+23:42:51 **** Incremental Build of configuration Debug for project 08_IPC_Socket ****
+make all 
+Building file: ../src/08_IPC_Socket.cpp
+Invoking: Cross G++ Compiler
+arm-linux-gnueabihf-g++ -O0 -g3 -Wall -c -fmessage-length=0 -std=c++11 -MMD -MP -MF"src/08_IPC_Socket.d" -MT"src/08_IPC_Socket.o" -o "src/08_IPC_Socket.o" "../src/08_IPC_Socket.cpp"
+Finished building: ../src/08_IPC_Socket.cpp
+ 
+Building target: 08_IPC_Socket
+Invoking: Cross G++ Linker
+arm-linux-gnueabihf-g++  -o "08_IPC_Socket"  ./src/08_IPC_Socket.o ./src/Adxl345I2C.o ./src/I2c.o ./src/SocketNode.o   
+Finished building target: 08_IPC_Socket
+ 
+23:44:20 **** Incremental Build of configuration Debug for project 08_IPC_Socket ****
+make all 
+Building file: ../src/08_IPC_Socket.cpp
+Invoking: Cross G++ Compiler
+arm-linux-gnueabihf-g++ -O0 -g3 -Wall -c -fmessage-length=0 -std=c++11 -MMD -MP -MF"src/08_IPC_Socket.d" -MT"src/08_IPC_Socket.o" -o "src/08_IPC_Socket.o" "../src/08_IPC_Socket.cpp"
+Finished building: ../src/08_IPC_Socket.cpp
+ 
+Building target: 08_IPC_Socket
+Invoking: Cross G++ Linker
+arm-linux-gnueabihf-g++  -o "08_IPC_Socket"  ./src/08_IPC_Socket.o ./src/Adxl345I2C.o ./src/I2c.o ./src/SocketNode.o   
+Finished building target: 08_IPC_Socket
+ 
+23:44:38 **** Incremental Build of configuration Debug for project 08_IPC_Socket ****
+make all 
+make: Nothing to be done for 'all'.
+23:44:55 **** Incremental Build of configuration Debug for project 08_IPC_Socket ****
+make all 
+Building file: ../src/08_IPC_Socket.cpp
+Invoking: Cross G++ Compiler
+arm-linux-gnueabihf-g++ -O0 -g3 -Wall -c -fmessage-length=0 -std=c++11 -MMD -MP -MF"src/08_IPC_Socket.d" -MT"src/08_IPC_Socket.o" -o "src/08_IPC_Socket.o" "../src/08_IPC_Socket.cpp"
+Finished building: ../src/08_IPC_Socket.cpp
+ 
+Building target: 08_IPC_Socket
+Invoking: Cross G++ Linker
+arm-linux-gnueabihf-g++  -o "08_IPC_Socket"  ./src/08_IPC_Socket.o ./src/Adxl345I2C.o ./src/I2c.o ./src/SocketNode.o   
+Finished building target: 08_IPC_Socket
+ 

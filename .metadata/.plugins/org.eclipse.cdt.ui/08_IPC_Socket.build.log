@@ -1,0 +1,15 @@
+23:44:55 **** Incremental Build of configuration Debug for project 08_IPC_Socket ****
+make all 
+Building file: ../src/08_IPC_Socket.cpp
+Invoking: Cross G++ Compiler
+arm-linux-gnueabihf-g++ -O0 -g3 -Wall -c -fmessage-length=0 -std=c++11 -MMD -MP -MF"src/08_IPC_Socket.d" -MT"src/08_IPC_Socket.o" -o "src/08_IPC_Socket.o" "../src/08_IPC_Socket.cpp"
+Finished building: ../src/08_IPC_Socket.cpp
+ 
+Building target: 08_IPC_Socket
+Invoking: Cross G++ Linker
+arm-linux-gnueabihf-g++  -o "08_IPC_Socket"  ./src/08_IPC_Socket.o ./src/Adxl345I2C.o ./src/I2c.o ./src/SocketNode.o   
+Finished building target: 08_IPC_Socket
+ 
+
+23:44:56 Build Finished (took 1s.546ms)
+

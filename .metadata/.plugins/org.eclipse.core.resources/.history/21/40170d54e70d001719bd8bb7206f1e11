@@ -1,0 +1,27 @@
+/*
+ * Gpio.h
+ *
+ *  Created on: Mar 20, 2017
+ *      Author: bbb
+ */
+
+#ifndef GPIO_H_
+#define GPIO_H_
+
+#include <iostream>
+#include <fstream>
+#include <sstream>
+#include <string>
+#include <cstring>
+#include <cstdio>
+using namespace std;
+
+
+class Gpio {
+	int pinNumber;
+public:
+	Gpio(int pinNumber);
+	virtual ~Gpio();
+};
+
+#endif /* GPIO_H_ */

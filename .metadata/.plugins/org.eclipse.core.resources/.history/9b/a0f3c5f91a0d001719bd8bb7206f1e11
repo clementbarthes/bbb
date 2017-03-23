@@ -1,0 +1,17 @@
+/*
+ * Adxl345I2C.h
+ *
+ *  Created on: Mar 19, 2017
+ *      Author: bbb
+ */
+
+#ifndef ADXL345I2C_H_
+#define ADXL345I2C_H_
+
+class Adxl345I2C {
+public:
+	Adxl345I2C();
+	virtual ~Adxl345I2C();
+};
+
+#endif /* ADXL345I2C_H_ */

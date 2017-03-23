@@ -1,0 +1,44 @@
+/*
+ * Gpio.cpp
+ *
+ *  Created on: Mar 20, 2017
+ *      Author: bbb
+ */
+
+#include "Gpio.h"
+
+
+Gpio::Gpio(int pinNumber) {
+	this->pinNumber = pinNumber;
+	ostringstream gpioPathSS;
+	std::ofstream exportFileStream;
+	char exportPath[] = "/sys/class/gpio/export";
+	exportFileStream.open(exportPath,std::ios::out);
+	exportFileStream << this->pinNumber;
+	gpioPathSS << "/sys/class/gpio/gpio" << this->pinNumber;
+	gpioPath = gpioPathSS.str();
+	if (access( gpioPath.c_str(), F_OK ) < 0)
+	{
+		cerr << "Error: GPIO pin does not exist" << endl;
+	}
+}
+
+void Gpio::setDirection(int dir) {
+	//ostringstream gpioPathSS
+}
+
+int Gpio::getDirection() {
+	return 0;
+}
+
+int Gpio::read() {
+	return 0;
+}
+
+void Gpio::write(int value) {
+}
+
+Gpio::~Gpio() {
+	// TODO Auto-generated destructor stub
+}
+

@@ -1,0 +1,18 @@
+/*
+ * Adxl345I2C.cpp
+ *
+ *  Created on: Mar 19, 2017
+ *      Author: bbb
+ */
+
+#include "Adxl345I2C.h"
+
+Adxl345I2C::Adxl345I2C() {
+	// TODO Auto-generated constructor stub
+
+}
+
+Adxl345I2C::~Adxl345I2C() {
+	// TODO Auto-generated destructor stub
+}
+

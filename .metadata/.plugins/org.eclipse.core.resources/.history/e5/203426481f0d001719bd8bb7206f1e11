@@ -1,0 +1,19 @@
+//============================================================================
+// Name        : 05_I2C.cpp
+// Author      : 
+// Version     :
+// Copyright   : Your copyright notice
+// Description : Hello World in C++, Ansi-style
+//============================================================================
+
+#include <iostream>
+using namespace std;
+#include "mraa.hpp"
+
+mraa::I2c* i2c;
+
+int main() {
+	i2c = new mraa::I2c(1);
+	cout << "!!!Hello World!!!" << endl; // prints !!!Hello World!!!
+	return 0;
+}

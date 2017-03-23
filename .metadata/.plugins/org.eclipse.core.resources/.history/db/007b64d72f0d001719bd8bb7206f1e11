@@ -1,0 +1,40 @@
+/*
+ * Adxl345I2C.cpp
+ *
+ *  Created on: Mar 19, 2017
+ *      Author: bbb
+ */
+
+#include "Adxl345I2C.h"
+
+Adxl345I2C::Adxl345I2C(I2c* i2c) {
+	// Assign the constructor input i2c to the object attribute called i2c
+	this->i2c = i2c;
+	// Do not forget to set up the address of the accel before you initiate
+	// a communication. Another function may have changed it if it uses the same bus
+	//i2c->address(accelAddress);
+	// Set up sampling rate at 100Hz (default)
+	i2c->writeByte(0x2C,0x0A);
+	// Set up to full-res (16 bits), MSB mode, +/-2g range
+	i2c->writeByte(0x31,0x0C);
+	// Change the status from Standby to Measure (bit D3)
+	i2c->writeByte(0x2D,0x08);
+}
+
+float Adxl345I2C::readAccel(uint8_t accelDir) {
+	union accelUnion {
+			int16_t asInt;
+			uint8_t asArray[2];
+		} accelVal;
+	//i2c->address(accelAddress);
+	accelVal.asArray[0] = i2c->readByte(accelDir);
+	accelVal.asArray[1] = i2c->readByte(accelDir|0x01);
+
+	return (float)accelVal.asInt*1.; //0.00006103888;
+}
+
+Adxl345I2C::~Adxl345I2C() {
+	// TODO Auto-generated destructor stub
+
+}
+

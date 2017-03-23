@@ -1,0 +1,57 @@
+/*
+ * Gpio.cpp
+ *
+ *  Created on: Mar 20, 2017
+ *      Author: bbb
+ */
+
+#include "Gpio.h"
+
+
+Gpio::Gpio(int pinNumber) {
+	this->pinNumber = pinNumber;
+	ostringstream gpioPathSS;
+	std::ofstream exportFS;
+	char exportPath[] = "/sys/class/gpio/export";
+	exportFS.open(exportPath,std::ios::out);
+	exportFS << this->pinNumber;
+	gpioPathSS << "/sys/class/gpio/gpio" << this->pinNumber;
+	gpioPath = gpioPathSS.str();
+}
+
+int Gpio::setDirection(int dir) {
+	ostringstream gpioDirectionSS;
+	std::ofstream directionFS;
+	gpioDirectionSS << gpioPath << "/direction";
+	directionFS.open(gpioDirectionSS.str().c_str());
+	if (dir == 0){
+		directionFS << "in";
+		directionFS.close();
+		return 0;
+	}
+	else if (dir == 1){
+		directionFS << "out";
+		return 0;
+	} else {
+		// Return error
+		cerr << "Invalid pin direction" << endl;
+		return -1;
+	}
+}
+
+int Gpio::getDirection() {
+	std::ifstream directionFS;
+	return 0;
+}
+
+int Gpio::read() {
+	return 0;
+}
+
+void Gpio::write(int value) {
+}
+
+Gpio::~Gpio() {
+	// TODO Auto-generated destructor stub
+}
+

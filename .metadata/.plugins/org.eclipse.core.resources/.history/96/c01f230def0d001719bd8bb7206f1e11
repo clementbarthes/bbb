@@ -1,0 +1,40 @@
+/*
+ * Gpio.h
+ *
+ *  Created on: Mar 20, 2017
+ *      Author: bbb
+ */
+
+#ifndef GPIO_H_
+#define GPIO_H_
+
+#include <iostream>
+#include <fstream>
+#include <sstream>
+#include <string>
+#include <cstring>
+#include <cstdio>
+#include <sys/types.h>
+#include <sys/stat.h>
+#include <dirent.h>
+using namespace std;
+
+enum pinDirection	{in= 0,
+                     out=1
+					};
+
+
+class Gpio {
+	int pinNumber;
+	ostringstream gpioPathSS;
+	string gpioPath;
+public:
+	Gpio(int pinNumber);
+	void setDirection(int dir);
+	int getDirection();
+	int read();
+	void write(int value);
+	virtual ~Gpio();
+};
+
+#endif /* GPIO_H_ */

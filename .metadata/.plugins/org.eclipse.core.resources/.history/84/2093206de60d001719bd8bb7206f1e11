@@ -1,0 +1,17 @@
+/*
+ * Gpio.h
+ *
+ *  Created on: Mar 20, 2017
+ *      Author: bbb
+ */
+
+#ifndef GPIO_H_
+#define GPIO_H_
+
+class Gpio {
+public:
+	Gpio();
+	virtual ~Gpio();
+};
+
+#endif /* GPIO_H_ */

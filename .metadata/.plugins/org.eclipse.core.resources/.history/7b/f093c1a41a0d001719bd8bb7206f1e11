@@ -1,0 +1,18 @@
+/*
+ * adxl345.cpp
+ *
+ *  Created on: Mar 19, 2017
+ *      Author: bbb
+ */
+
+#include "adxl345.h"
+
+adxl345::adxl345() {
+	// TODO Auto-generated constructor stub
+
+}
+
+adxl345::~adxl345() {
+	// TODO Auto-generated destructor stub
+}
+

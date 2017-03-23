@@ -1,0 +1,4 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<session version="1.0">
+<refactoring comment="Rename resource &apos;06_TimerInterrupt/src/05_I2C.cpp&apos; to &apos;06_TimerInterrupt.cpp&apos;" description="Rename resource &apos;05_I2C.cpp&apos;" flags="7" id="org.eclipse.ltk.core.refactoring.rename.resource" input="src/05_I2C.cpp" name="06_TimerInterrupt.cpp" stamp="1490047358409" updateReferences="true"/>
+</session>

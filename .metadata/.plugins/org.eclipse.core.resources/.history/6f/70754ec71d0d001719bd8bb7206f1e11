@@ -1,0 +1,22 @@
+/*
+ * Adxl345I2C.cpp
+ *
+ *  Created on: Mar 19, 2017
+ *      Author: bbb
+ */
+
+#include "Adxl345I2C.h"
+
+Adxl345I2C::Adxl345I2C(mraa::I2c* i2c) {
+	// Assign the constructor input i2c to the object attribute called i2c
+	this->i2c = i2c;
+	// Do not forget to set up the address of the accel before you initiate
+	// a communication. Another function may have changed it if it uses the same bus
+	i2c->address(accelAddress);
+	i2c->writeReg(0x1F,0x40);
+}
+
+Adxl345I2C::~Adxl345I2C() {
+	// TODO Auto-generated destructor stub
+}
+

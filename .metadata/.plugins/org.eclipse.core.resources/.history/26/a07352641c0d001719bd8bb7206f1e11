@@ -1,0 +1,18 @@
+/*
+ * Lsm303d.cpp
+ *
+ *  Created on: Mar 19, 2017
+ *      Author: bbb
+ */
+
+#include "Lsm303d.h"
+
+Lsm303d::Lsm303d() {
+	// TODO Auto-generated constructor stub
+
+}
+
+Lsm303d::~Lsm303d() {
+	// TODO Auto-generated destructor stub
+}
+

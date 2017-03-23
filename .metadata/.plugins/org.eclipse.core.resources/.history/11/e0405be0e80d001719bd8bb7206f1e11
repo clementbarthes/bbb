@@ -1,0 +1,36 @@
+/*
+ * Gpio.cpp
+ *
+ *  Created on: Mar 20, 2017
+ *      Author: bbb
+ */
+
+#include "Gpio.h"
+
+
+Gpio::Gpio(int pinNumber) {
+	this->pinNumber = pinNumber;
+	 std::ofstream gpioPathStream;
+	 std::ofstream exportFileStream;
+
+	 exportFile.open(this->expPath.c_str(),std::ios::out);
+	        if(expFile.fail())
+	        {
+	            expFile.close();
+	            this->gpioCoreError->exportFileError = true;
+	            return false;
+	        }
+	        else
+	        {
+	            expFile << this->pinNumericName;
+
+	            expFile.close();
+	            this->gpioCoreError->exportFileError = false;
+	            return true;
+	        }
+}
+
+Gpio::~Gpio() {
+	// TODO Auto-generated destructor stub
+}
+

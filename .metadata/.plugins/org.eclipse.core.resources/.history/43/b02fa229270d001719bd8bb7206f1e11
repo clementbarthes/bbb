@@ -1,0 +1,46 @@
+/*
+ * I2c.h
+ *
+ *  Created on: Mar 19, 2017
+ *      Author: bbb
+ */
+
+#ifndef I2C_H_
+#define I2C_H_
+#include <iostream>
+
+#include <cstring>
+#include <string>
+#include <fstream>
+#include <cstdint>
+#include <unistd.h>
+#include <stdint.h>
+#include <fcntl.h>
+#include <sys/ioctl.h>
+#include <linux/i2c.h>
+#include <linux/i2c-dev.h>
+using namespace std;
+
+ enum transactionType    {   SMBUS_QUICK             = 0,
+                                SMBUS_BYTE              = 1,
+                                SMBUS_BYTE_DATA         = 2,
+                                SMBUS_WORD_DATA         = 3,
+                                SMBUS_PROC_CALL         = 4,
+                                SMBUS_BLOCK_DATA        = 5,
+                                SMBUS_I2C_BLOCK_BROKEN  = 6,
+                                SMBUS_BLOCK_PROC_CALL   = 7,
+                                SMBUS_I2C_BLOCK_DATA    = 8
+                            };
+
+
+class I2c {
+public:
+
+	uint8_t writeByte(uint8_t reg, uint8_t value);
+	uint8_t readByte(uint8_t reg);
+
+	I2c();
+	virtual ~I2c();
+};
+
+#endif /* I2C_H_ */

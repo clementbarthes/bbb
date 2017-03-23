@@ -1,0 +1,87 @@
+//============================================================================
+// Name        : 08_IPC_Socket.cpp
+// Author      : 
+// Version     :
+// Copyright   : Your copyright notice
+// Description : Hello World in C++, Ansi-style
+//============================================================================
+
+#include <signal.h>
+#include <iostream>
+#include <fstream>
+#include <unistd.h>
+#include <sys/time.h>
+#include "I2c.h"
+#include "Adxl345I2C.h"
+#include "SocketNode.h"
+using namespace std;
+
+#define pointsToGather 10
+
+int serverStatus = 0;
+I2c* i2c; // Create an I2C object
+Adxl345I2C* accel;
+SocketNode* socketNode;
+
+struct timespec sampleTimeIni, sampleTimeEnd;
+char readBuffer[BUFSIZ+1];
+
+
+
+void sigTimer_handler(int signum);
+
+
+
+
+int main() {
+	i2c = new I2c(1); // Assign bus 1 to the I2c object
+	accel = new Adxl345I2C(i2c);
+	socketNode = new SocketNode();
+
+	struct itimerval timer;
+		/* Initial timeout value */
+		timer.it_value.tv_sec = 1;  //in sec
+		timer.it_value.tv_usec = 0; // in usec
+		/* Repetitive timer */
+		timer.it_interval.tv_sec = 0;  //in sec
+		timer.it_interval.tv_usec = 100000;
+
+		signal(SIGALRM, &sigTimer_handler);
+		printf("Timer: %i \n", setitimer(ITIMER_REAL, &timer, NULL));
+
+		for (;;) {
+			sleep(10); // Does nothing, just wait for interrupts
+		}
+	return 0;
+}
+
+
+void sigTimer_handler(int signum){
+	static int dataGatherIter = 0;
+	static int ptrIter = 0;
+	static char gatheredData[pointsToGather*(3*sizeof(float))];
+
+	float accX = readAccel(Adxl345I2C::accelX);
+	float accY = readAccel(Adxl345I2C::accelY);
+	float accZ = readAccel(Adxl345I2C::accelZ);
+
+
+	++dataGatherIter;
+	memcpy(gatheredData+ptrIter, &accX, sizeof(float));
+	ptrIter += sizeof(float);
+	memcpy(gatheredData+ptrIter, &accY, sizeof(float));
+	ptrIter += sizeof(float);
+	memcpy(gatheredData+ptrIter, &accZ, sizeof(float));
+	ptrIter += sizeof(float);
+
+	if (dataGatherIter == pointsToGather){
+		if(!socketNode->writeToNode(gatheredData, pointsToGather*3*sizeof(float))){
+			// If it failed, try to reconnect
+			printf("Reconnection: %i \n", serverStatus = socketNode->connectToNode());
+
+		}
+		dataGatherIter = 0;
+		ptrIter = 0;
+	}
+
+}

@@ -1,0 +1,17 @@
+/*
+ * Lsm303d.h
+ *
+ *  Created on: Mar 19, 2017
+ *      Author: bbb
+ */
+
+#ifndef LSM303D_H_
+#define LSM303D_H_
+
+class Lsm303d {
+public:
+	Lsm303d();
+	virtual ~Lsm303d();
+};
+
+#endif /* LSM303D_H_ */

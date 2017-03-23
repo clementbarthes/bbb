@@ -1,0 +1,21 @@
+//============================================================================
+// Name        : 03b_LED_Blink.cpp
+// Author      : 
+// Version     :
+// Copyright   : Your copyright notice
+// Description : Hello World in C++, Ansi-style
+//============================================================================
+
+#include <iostream>
+#include "Gpio.h"
+using namespace std;
+
+Gpio* gpio;
+int main() {
+	gpio = new Gpio(67);
+	cout << "First GPIO exported" << endl;
+	gpio->setDirection(Gpio::in);
+	cout << "Dir: " << gpio->getDirection() <<  endl;
+
+	return 0;
+}

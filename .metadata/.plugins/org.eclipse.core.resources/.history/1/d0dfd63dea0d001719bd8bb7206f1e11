@@ -1,0 +1,36 @@
+/*
+ * Gpio.cpp
+ *
+ *  Created on: Mar 20, 2017
+ *      Author: bbb
+ */
+
+#include "Gpio.h"
+
+
+Gpio::Gpio(int pinNumber) {
+	this->pinNumber = pinNumber;
+	 std::ofstream gpioPathStream;
+	 std::ofstream exportFileStream;
+	 char exportPath[] = "/sys/class/gpio/export";
+	 exportFileStream.open(exportPath,std::ios::out);
+	 exportFileStream << this->pinNumber;
+	 gpioPathStream << "/sys/class/gpio/gpio" << this->pinNumber;
+	 DIR* gpioDir = opendir(gpioPathStream.str());
+	 if (dir)
+	 {
+	     /* Directory exists. */
+	     closedir(dir);
+	 }
+	 else if (ENOENT == errno)
+	 {
+	     /* Directory does not exist. */
+	 }
+
+
+}
+
+Gpio::~Gpio() {
+	// TODO Auto-generated destructor stub
+}
+
